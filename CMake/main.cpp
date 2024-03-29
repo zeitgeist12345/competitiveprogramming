@@ -89,13 +89,21 @@ void setup(int argc, char* argv[]) {
 //     }
 // };
 
+// For sort like
+// sort(arr.begin(), arr.end(), comp);
+bool comp(int a, int b) {
+    int first = stoi(to_string(a) + to_string(b));
+    int second = stoi(to_string(b) + to_string(a));
+
+    return first < second;
+}
+
 /*
 NOTES:
 
 
 */
 ///////////////////////////////////////////////////////////////
-
 
 int main(int argc, char* argv[]) {
     ios_base::sync_with_stdio(0);
@@ -104,62 +112,17 @@ int main(int argc, char* argv[]) {
     setup(argc, argv);
     ////////////////////////////////////////
 
-    vector<int> powersOf2(31);
-    powersOf2[0] = 1;
-    powersOf2[1] = 2;
-    for(int i=2;i<30;i++) {
-        powersOf2[i] = powersOf2[i-1]*2;
-    }
+    // int T;
+    // cin >> T;
+    // for (int test_case = 1; test_case <= T; test_case++) {
+    // }
 
-    int T;
-    cin >> T;
-    for (int test_case = 1; test_case <= T; test_case++) {
-        int a,b,c;
-        cin>>a>>b>>c;
+    vector<int> arr({10, 7, 76, 415});
 
-        int leafNodes = 1;
+    sort(arr.begin(), arr.end(), comp);
 
-        leafNodes+=a;
-
-        if(leafNodes!=c) {
-            cout<<-1<<endl;
-        } else {
-            // cout<<"Maybe possible"<<endl;
-
-            if(a==0) {
-                cout<<b<<endl;
-                continue;
-            }
-
-            int power = -1;
-            for(int i=29;i>=0;i--) {
-                if(a>=powersOf2[i]) {
-                    power = i;
-                    break;
-                }
-            }
-
-            int answer = power+1;
-
-            int additional = a - (powersOf2[power]-1);
-
-            int sameLevelSpaces = powersOf2[power] - additional;
-
-            int nextLevelSpace = 2*additional+sameLevelSpaces;
-
-
-            b-=sameLevelSpaces;
-
-            while(b>0) {
-                b-=nextLevelSpace;
-                answer++;
-            }
-
-            cout<<answer<<endl;
-        }
-
-
-
+    for (int i = arr.size() - 1; i >= 0; i--) {
+        cout << arr[i] << endl;
     }
 
     return 0;
