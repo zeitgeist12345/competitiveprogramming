@@ -91,12 +91,12 @@ void setup(int argc, char* argv[]) {
 
 // For sort like
 // sort(arr.begin(), arr.end(), comp);
-bool comp(int a, int b) {
-    int first = stoi(to_string(a) + to_string(b));
-    int second = stoi(to_string(b) + to_string(a));
+// bool comp(int a, int b) {
+//     int first = stoi(to_string(a) + to_string(b));
+//     int second = stoi(to_string(b) + to_string(a));
 
-    return first < second;
-}
+//     return first < second;
+// }
 
 /*
 NOTES:
@@ -117,13 +117,7 @@ int main(int argc, char* argv[]) {
     // for (int test_case = 1; test_case <= T; test_case++) {
     // }
 
-    vector<int> arr({10, 7, 76, 415});
 
-    sort(arr.begin(), arr.end(), comp);
-
-    for (int i = arr.size() - 1; i >= 0; i--) {
-        cout << arr[i] << endl;
-    }
 
     return 0;
 }
