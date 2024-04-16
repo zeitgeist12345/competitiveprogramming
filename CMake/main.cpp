@@ -73,30 +73,31 @@ void setup(int argc, char* argv[]) {
 }
 
 // For map like
-// map<int, int, cmp> myMap;
-// struct comp {
-//     bool operator()(int a, int b) const {
-//         return a < b;  // true means a definitely before b
-//     }
-// };
+// map<int, int, compare> myMap;
+struct compare {
+    bool operator()(int a, int b) const {
+        return a < b;  // true means a definitely before b
+    }
+};
 
 // For unordered_map like
-// std::unordered_map<tuple<int, int>, int, customHash> myMap;
-// struct customHash {
-//     size_t operator()(const tuple<int, int>& a) const {
-//         // max value of second element is 99.
-//         return get<0>(a)*100+get<1>(a);
-//     }
-// };
+// std::unordered_map<tuple<int, int>, int, customHASH> myUMap;
+struct customHASH {
+    size_t operator()(const tuple<int, int> a) const {
+        // collisions are handled internally.
+        // max value of second element is 99.
+        return get<0>(a)*100+get<1>(a);
+    }
+};
 
 // For sort like
 // sort(arr.begin(), arr.end(), comp);
-// bool comp(int a, int b) {
-//     int first = stoi(to_string(a) + to_string(b));
-//     int second = stoi(to_string(b) + to_string(a));
+bool comp(int a, int b) {
+    int first = stoi(to_string(a) + to_string(b));
+    int second = stoi(to_string(b) + to_string(a));
 
-//     return first < second;
-// }
+    return first < second;
+}
 
 /*
 NOTES:
@@ -118,6 +119,29 @@ int main(int argc, char* argv[]) {
     // }
 
 
+    map<int, int, compare> myMap;
+    myMap[1] = 2;
+    cout<<myMap[1]<<endl;
+
+    std::unordered_map<tuple<int, int>, int, customHASH> myUMap;
+
+    myUMap[make_tuple(10,20)] = 15;
+    myUMap[make_tuple(0,100)] = 123;
+    myUMap[make_tuple(1,0)] = 456;
+
+    cout<<myUMap[make_tuple(10,20)]<<endl;
+
+
+    cout<<myUMap[make_tuple(0,100)]<<endl;
+    cout<<myUMap[make_tuple(1,0)]<<endl;
+
+    vector<int> arr(3);
+    arr[0] = 1;
+    arr[1] = 4;
+    arr[2] = 2;
+    sort(arr.begin(), arr.end(), comp);
+
+    cout<<arr[1]<<endl;
 
     return 0;
 }
