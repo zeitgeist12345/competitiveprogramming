@@ -37,6 +37,10 @@ printf("%.2lf", double_value);  // 4.00
 #include <chrono>
 // INT_MIN LLONG_MAX
 #include <climits>
+// unique_lock<mutex> lock(mtx);
+// condition_variable cv;
+// cv.wait(lock);
+// cv.notify_all();
 #include <condition_variable>
 // rand() and srand()
 #include <cstdlib>
@@ -95,7 +99,7 @@ printf("%.2lf", double_value);  // 4.00
 
 // cout << "Line 1..." << flush;
 // or default endl for interactive programs.
-#define endl "\n"
+// #define endl "\n"
 using namespace std;
 
 void setup(int argc, char* argv[]) {
