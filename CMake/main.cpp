@@ -178,12 +178,5 @@ int main(int argc, char* argv[]) {
     // for (int test_case = 1; test_case <= T; test_case++) {
     // }
 
-    std::atomic<int> counter(99);
-    counter.fetch_add(2);
-    counter.fetch_sub(1);
-    int value = counter.load();
-
-    cout << value << endl;
-
     return 0;
 }
