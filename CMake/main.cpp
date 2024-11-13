@@ -31,6 +31,10 @@ printf("%.2lf", double_value);  // 4.00
 // reverse
 // next_permutation
 #include <algorithm>
+// std::atomic<int> counter(99);
+// counter.fetch_add(1);
+// int value = counter.load();
+#include <atomic>
 // (c & a).any() and access like array
 #include <bitset>
 // System time
