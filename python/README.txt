@@ -1,7 +1,7 @@
 python python/main.py
 
-python -m venv .venv 
-.venv/Scripts/Activate
+python -m venv myenv
+mvenv/Scripts/Activate
 deactivate
 
 pip install package_name
