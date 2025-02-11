@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/.",
+    "cmake.sourceDirectory": "${workspaceFolder}/CMake",
     "editor.tabSize": 4,
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0 }",
     "files.associations": {
