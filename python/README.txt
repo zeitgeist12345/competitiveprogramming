@@ -6,7 +6,7 @@ deactivate
 
 pip install package_name
 
-pip freeze > requirements.txt
-pip install -r requirements.txt
+pip freeze > python/pip_requirements.txt
+pip install -r python/pip_requirements.txt
 
 
