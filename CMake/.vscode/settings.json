@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/CMake",
+    "cmake.sourceDirectory": "${workspaceFolder}",
     "editor.tabSize": 4,
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0 }",
     "files.associations": {
@@ -26,5 +26,6 @@
         "thread": "cpp",
         "atomic": "cpp",
         "xstring": "cpp"
-    }
+    },
+    "sarif-viewer.connectToGithubCodeScanning": "off"
 }
