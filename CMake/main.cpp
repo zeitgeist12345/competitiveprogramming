@@ -143,10 +143,10 @@ void setup(int argc, char* argv[]) {
 // For unordered_map like
 // std::unordered_map<tuple<int, int>, int, customHASH> myUMap;
 // struct customHASH {
-//     size_t operator()(const tuple<int, int> a) const {
+//     size_t operator()(tuple<int, int> a) const {
 //         // collisions are handled internally.
 //         // max value of second element is 99.
-//         return get<0>(a)*100+get<1>(a);
+//         return abs(abs(get<0>(a)) - abs(get<1>(a)));
 //     }
 // };
 
