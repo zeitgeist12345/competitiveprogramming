@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def propogandaEffectiveness(x):
-    return x * math.exp(x/10.0) * (100 - x) / 80000
+    return math.exp(x/10.0) * (100 - x) / 100000
 
 # Generate x values from 0 to 100
 x_vals = np.linspace(0, 100, 1000000)
